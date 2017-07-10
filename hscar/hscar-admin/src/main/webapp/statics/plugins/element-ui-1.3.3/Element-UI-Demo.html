@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Element UI Demo</title>
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
+		<script src="https://unpkg.com/vue@2.3.3"></script>
+		<script src="https://unpkg.com/element-ui@1.3.3/lib/index.js"></script> 
+	</head>
+	<body>
+		<div id="test">
+			<el-select v-model="payTotalCollect.merId" filterable placeholder="请选择商户号">
+				<el-option v-for="option in merIdConfigList" :key="option.value" :label="option.remark" :value="option.value" />
+			</el-select>
+			
+			<el-date-picker v-model="value1" type="datetime" placeholder="选择时间范围"></el-date-picker>
+			<el-time-picker v-model="value2"
+			:picker-options="{
+			  selectableRange: '18:30:00 - 20:30:00'
+			}" placeholder="任意时间点"></el-time-picker>
+			
+			<el-radio-group v-model="radio1">
+				<el-radio-button label="上海"></el-radio-button>
+				<el-radio-button label="北京"></el-radio-button>
+				<el-radio-button label="广州"></el-radio-button>
+				<el-radio-button label="深圳"></el-radio-button>
+			</el-radio-group>
+			
+			<el-tabs v-model="activeName" @tab-click="handleClick">
+				<el-tab-pane label="用户管理" name="first">用户管理</el-tab-pane>
+				<el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
+				<el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
+				<el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
+			</el-tabs>
+		</div>
+	</body>
+	<script>
+			new Vue({
+				el: '#test',
+				data:{
+					payTotalCollect:{
+						merId: ""
+					},
+					merIdConfigList: [{"id":1,"key":"Mer_Id_225","remark":"商户号为225的商户","value":"225"},{"id":2,"key":"Mer_Id_777","remark":"商户号为777的商户","value":"777"},{"id":3,"key":"Mer_Id_0","remark":"商户号为0的商户","value":"0"}],
+					value1: "",
+					value2: "",
+					radio1: "",
+					activeName: ""
+				},
+				methods: {
+					handleClick(tab, event) {
+						console.log(tab, event);
+					}
+				}
+			})
+		</script>
+</html>

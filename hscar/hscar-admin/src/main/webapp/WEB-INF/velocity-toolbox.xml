@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- velocity 自定义标签 -->
+<toolbox>
+	<!-- 标签：判断shiro是否有权限 -->
+	<tool>
+	    <key>shiro</key>
+	    <scope>application</scope>
+	    <class>org.agile.shiro.VelocityShiro</class>
+	</tool>
+	<!-- 标签：获取是或否的枚举列表 -->
+	<tool>
+	    <key>YesOrNoTool</key>
+	    <scope>application</scope>
+	    <class>org.agile.velocity_tool.VelocityYesOrNo</class>
+	</tool>
+</toolbox>

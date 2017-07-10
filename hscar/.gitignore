@@ -1,0 +1,12 @@
+/.idea/*
+*.iml
+*.eml
+*/bin/
+*/target/
+*.project
+*.classpath
+*.settings
+*.mvn
+.project
+
+
